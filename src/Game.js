@@ -1,29 +1,33 @@
 import React, { PureComponent } from 'react';
 
-// Scissors cuts Paper
-// Paper covers Rock
-// Rock crushes Lizard
-// Lizard poisons Spock
-// Spock smashes Scissors
-// Scissors decapitates Lizard
-// Lizard eats Paper
-// Paper disproves Spock
-// Spock vaporizes Rock
-// (and as it always has) Rock crushes Scissors
-
 const rules = {
-  rock: ['lizard', 'scissors'],
-  paper: ['spock', 'rock'],
-  scissors: ['lizard', 'paper'],
-  lizard: ['spock', 'paper'],
-  spock: ['scissors', 'rock']
+  rock: {
+    lizard: 'Rock crushes Lizard',
+    scissors: '(as it always has) Rock crushes Scissors'
+  },
+  paper: {
+    rock: 'Paper covers Rock',
+    spock: 'Paper disproves Spock'
+  },
+  scissors: {
+    paper: 'Scissors cuts Paper',
+    lizard: 'Scissors decapitates Lizard'
+  },
+  lizard: {
+    spock: 'Lizard poisons Spock',
+    paper: 'Lizard eats Paper'
+  },
+  spock: {
+    scissors: 'Spock smashes Scissors',
+    rock: 'Spock vaporizes Rock'
+  },
 };
 
 const Icon = ({ name, active, onChange }) => (
   <label>
     <input type="radio" name="userChoice" value={name} onChange={onChange} checked={active} />
-    {name}
     <i className={`far fa-hand-${name} fa-7x ${active ? 'active' : ''}`}></i>
+    <span className="labelText">{name}</span>
   </label>
 );
 
@@ -44,8 +48,11 @@ class Game extends PureComponent {
     let winner;
 
     if (user === computer) winner = 'It\'s a tie!';
-    else if (user === undefined || computer === undefined) winner = 'winner unknown';
-    else winner = rules[user].indexOf(computer) > -1 ? 'You won!' : 'Sorry, the computer won.';
+    else if (user === undefined || computer === undefined) winner = 'winner unknown'; // just in case
+    else {
+      const userWon = rules[user].hasOwnProperty(computer);
+      winner = userWon ? `${rules[user][computer]}, you win!` : `${rules[computer][user]}, the computer won.`;
+    }
     
     this.setState({ user, computer, winner });
   }
