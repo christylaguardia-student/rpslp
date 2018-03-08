@@ -1,0 +1,74 @@
+@import "../../node_modules/bulma/sass/utilities/initial-variables.sass";
+@import "../../node_modules/bulma/sass/utilities/functions.sass";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+///// custom variables /////
+
+// $leonardOrange: rgb(255, 100, 0);
+// $howardYellow: rgb( 255, 214, 0);
+// $sheldonGreen: rgb(175, 210, 0);
+// $rajBlue: rgb( 214, 255, 0);
+
+// $blue: rgb(10, 148, 178);
+// $yellow: rgb(231, 199, 5);
+// $green: rgb(117, 193, 9);
+// $purple: rgb(172, 15, 182);
+// $pink: rgb(234, 21, 171);
+
+
+$red: #f00000;	//(240,0,0)
+$purple: #fd1bff;	//(253,27,255)
+$blue: #3ccdec;	//(60,205,236)
+$green: #2fff00;	//(47,255,0)
+$yellow: #e8ff29;	//(232,255,41)
+
+$primary: $blue;
+$info: $yellow;
+$success: $green;
+$warning: $purple;
+$danger: $red;
+
+$family-sans-serif: "Open Sans", sans-serif;
+$family-primary: $family-sans-serif;
+
+@import "../../node_modules/bulma/sass/utilities/derived-variables.sass";
+
+///// custom derived variables /////
+
+// $box-background-color: $primary;
+
+@import "../../node_modules/bulma/bulma.sass";
+
+///// custom classes /////
+
+.fullScreen {
+  min-height: 100vh;
+}
+
+.showText {
+  position: relative;
+  left: -100%;
+  animation: fadeIn 0.2s forwards;
+  animation-delay: 0s;
+
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i + 1}) {
+      animation-delay: #{$i}s;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  100% {
+    left: 0;
+  }
+}
+
+.iconButton:hover {
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+}
+
+.is-primary, .is-success, .is-danger {
+  transition: background-color  1.5s ease-in-out; //linear
+}
