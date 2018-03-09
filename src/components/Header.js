@@ -36,10 +36,12 @@ class Header extends React.PureComponent {
               <p className="title">
               Rock Paper Scissors Lizard Spock
               </p>
-              <p className="button is-medium is-primary is-outlined is-inverted"
-                style={{ display: `${show ? 'none' : 'block'}` }}
-                onClick={this.startShow}>
-                What the fwig is that?
+              <p>
+                <span className="button is-medium is-primary is-outlined is-inverted"
+                  style={{ display: `${show ? 'none' : 'block'}` }}
+                  onClick={this.startShow}>
+                  What the fwig is that?
+                </span>
               </p>
             </div>
           </div>
@@ -67,6 +69,11 @@ class Header extends React.PureComponent {
       </header>
     );
   }
+}
+
+PropTypes.Header = {
+  show: PropTypes.bool,
+  slide: PropTypes.number
 }
 
 export default Header;

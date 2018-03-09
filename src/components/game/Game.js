@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { rules } from './Rules';
 import Play from './Play';
 import Scores from './Scores';
@@ -71,7 +72,7 @@ class Game extends PureComponent {
 
         <section className="section">
           {scores.length > 0 &&
-            <Scores scores={scores} reset={this.reset} />}
+            <Scores scores={'scores'} reset={this.reset} />}
         </section>
 
         {results &&
@@ -82,6 +83,11 @@ class Game extends PureComponent {
       </main>
     )
   }
+}
+
+PropTypes.Game = {
+  results: PropTypes.string,
+  scores: PropTypes.array
 }
 
 export default Game;

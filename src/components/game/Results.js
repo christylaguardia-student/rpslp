@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Results = ({ score, results, handleClose }) => (
   <div className={`modal ${results === null ? '' : 'is-active'}`}>
@@ -42,5 +43,11 @@ const Results = ({ score, results, handleClose }) => (
     </div>
   </div>
 );
+
+PropTypes.Results = {
+  score: PropTypes.array,
+  results: PropTypes.string,
+  handleClose: PropTypes.func
+}
 
 export default Results;

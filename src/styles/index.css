@@ -6537,7 +6537,7 @@ a:hover, .button:hover {
   min-width: 40px; }
 
 #rulesText {
-  min-height: 100px; }
+  height: 100px; }
 
 .visible {
   display: block;
