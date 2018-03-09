@@ -7,21 +7,21 @@ const Results = ({ score, results, handleClose }) => (
     <div className="modal-content has-text-centered">
       <div className="box">
 
-        {score.computer &&
-          <div>
-            <p className="is-text-4">The Computer chose</p>
-            <br />
-            <div className="level-item">
-              <div>
-                <p className="box">
-                  <span className="icon is-large">
-                    <i className={`far fa-hand-${score.computer} fa-3x`}></i>
-                  </span>
-                </p>
-                <p className="heading">{score.computer}</p>
-              </div>
+      {score.computer &&
+        <div>
+          <p className="is-text-4">The Computer chose</p>
+          <br />
+          <div className="level-item">
+            <div>
+              <p className="box">
+                <span className="icon is-large">
+                  <i className={`far fa-hand-${score.computer} fa-3x`}></i>
+                </span>
+              </p>
+              <p className="heading">{score.computer}</p>
             </div>
-          </div>}
+          </div>
+        </div>}
 
         <p className="is-text-4">{results}</p>
         <br />

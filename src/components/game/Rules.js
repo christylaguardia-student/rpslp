@@ -1,8 +1,6 @@
 
-
 // sheldon's order
 export const rulesText = [
-  ['', '', 'As Sheldon explains,'],
   ['scissors', 'paper', 'scissors cuts paper'],
   ['paper', 'rock', 'paper covers rock'],
   ['rock', 'lizard', 'rock crushes lizard'],
@@ -12,7 +10,6 @@ export const rulesText = [
   ['lizard', 'paper', 'lizard eats paper'],
   ['paper', 'spock', 'paper disproves spock'],
   ['spock', 'rock', 'spock vaporizes rock'],
-  ['', '', 'and as it always has...'],
   ['rock', 'scissors', 'rock crushes scissors.']
 ];
 

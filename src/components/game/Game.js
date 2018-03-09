@@ -58,7 +58,7 @@ class Game extends PureComponent {
 
     return (
       <main>
-        <div className="hero is-primary">
+        <div className="hero">
           <div className="hero-body">
             <div className="container has-text-centered">
               <p className="title">{scores.length > 0 ? 'Your Turn!' : 'Play now!'}</p>
@@ -72,7 +72,7 @@ class Game extends PureComponent {
 
         <section className="section">
           {scores.length > 0 &&
-            <Scores scores={'scores'} reset={this.reset} />}
+            <Scores scores={scores} reset={this.reset} />}
         </section>
 
         {results &&

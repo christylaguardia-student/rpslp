@@ -6511,12 +6511,6 @@ label.panel-block {
 .modal-background, .modal-content {
   animation: fadeIn 600ms ease-in forwards; }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-
 .fullScreen {
   min-height: 100vh; }
 
@@ -6533,24 +6527,50 @@ label.panel-block {
 a:hover, .button:hover {
   transition: background-color 200ms ease-in-out; }
 
+.flicker {
+  animation: fadeIn 1s infinite alternate; }
+
 .tag {
   min-width: 40px; }
 
 #rulesText {
-  height: 100px; }
+  height: 150px; }
 
 .visible {
   display: block;
   position: relative;
-  animation: slideIn 3s forwards; }
+  animation: fadeIn 1s; }
 
 .hidden {
-  display: none; }
+  display: none;
+  animation: fadeOut 1s; }
 
-@keyframes slideIn {
+.slideLeft {
+  animation: slideFromLeft 1s; }
+
+.slideRight {
+  animation: slideFromRight 1s; }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes slideFromLeft {
   0% {
     transform: translate(-110%, 0); }
-  50% {
-    transform: translate(0, 0); }
   100% {
-    transform: translate(110%, 0); } }
+    transform: translate(0, 0); } }
+
+@keyframes slideFromRight {
+  0% {
+    transform: translate(110%, 0); }
+  100% {
+    transform: translate(0, 0); } }
