@@ -37,7 +37,7 @@ class Game extends PureComponent {
   }
 
   handleTie = (user, computer) => this.setState({
-    results: 'It\'s a tie!',
+    results: 'No winner.',
     scores: [
       ...this.state.scores,
       {
@@ -59,8 +59,8 @@ class Game extends PureComponent {
       <main>
         <div className="hero is-primary">
           <div className="hero-body">
-            <div className="container">
-              <p className="subtitle">Play Against the Computer</p>
+            <div className="container has-text-centered">
+              <p className="title">{scores.length > 0 ? 'Your Turn!' : 'Play now!'}</p>
             </div>
           </div>
         </div>

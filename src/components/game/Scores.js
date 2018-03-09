@@ -40,7 +40,7 @@ const Scores = ({ scores, reset }) => (
         </div>)
     })}
 
-    <button className="button is-medium is-warning" onClick={reset}>Reset</button>
+    <button className="button is-primary is-outlined" onClick={reset}>Reset</button>
   </div>
 );
 
