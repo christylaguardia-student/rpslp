@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { rules } from './Rules';
 import Play from './Play';
 import Scores from './Scores';
@@ -37,7 +38,7 @@ class Game extends PureComponent {
   }
 
   handleTie = (user, computer) => this.setState({
-    results: 'It\'s a tie!',
+    results: 'No winner.',
     scores: [
       ...this.state.scores,
       {
@@ -57,10 +58,10 @@ class Game extends PureComponent {
 
     return (
       <main>
-        <div className="hero is-primary">
+        <div className="hero">
           <div className="hero-body">
-            <div className="container">
-              <p className="subtitle">Play Against the Computer</p>
+            <div className="container has-text-centered">
+              <p className="title">{scores.length > 0 ? 'Your Turn!' : 'Play now!'}</p>
             </div>
           </div>
         </div>
@@ -82,6 +83,11 @@ class Game extends PureComponent {
       </main>
     )
   }
+}
+
+PropTypes.Game = {
+  results: PropTypes.string,
+  scores: PropTypes.array
 }
 
 export default Game;

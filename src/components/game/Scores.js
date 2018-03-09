@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Scores = ({ scores, reset }) => (
   <div className="box has-text-centered" style={{ height: '100%' }}>
@@ -40,8 +41,13 @@ const Scores = ({ scores, reset }) => (
         </div>)
     })}
 
-    <button className="button is-medium is-warning" onClick={reset}>Reset</button>
+    <button className="button is-primary is-outlined" onClick={reset}>Reset</button>
   </div>
 );
+
+PropTypes.Scores = {
+  scores: PropTypes.array,
+  reset: PropTypes.func
+}
 
 export default Scores;

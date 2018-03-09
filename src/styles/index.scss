@@ -4,23 +4,11 @@
 
 ///// custom variables /////
 
-// $leonardOrange: rgb(255, 100, 0);
-// $howardYellow: rgb( 255, 214, 0);
-// $sheldonGreen: rgb(175, 210, 0);
-// $rajBlue: rgb( 214, 255, 0);
-
-// $blue: rgb(10, 148, 178);
-// $yellow: rgb(231, 199, 5);
-// $green: rgb(117, 193, 9);
-// $purple: rgb(172, 15, 182);
-// $pink: rgb(234, 21, 171);
-
-
-$red: #f00000;	//(240,0,0)
-$purple: #fd1bff;	//(253,27,255)
-$blue: #3ccdec;	//(60,205,236)
-$green: #2fff00;	//(47,255,0)
-$yellow: #e8ff29;	//(232,255,41)
+$red: #f00000;
+$purple: #fd1bff;
+$blue: #3ccdec;
+$green: #2fff00;
+$yellow: #E4FF00; //#e8ff29;	//(232,255,41)
 
 $primary: $blue;
 $info: $yellow;
@@ -32,43 +20,86 @@ $family-sans-serif: "Open Sans", sans-serif;
 $family-primary: $family-sans-serif;
 
 @import "../../node_modules/bulma/sass/utilities/derived-variables.sass";
-
-///// custom derived variables /////
-
-// $box-background-color: $primary;
-
 @import "../../node_modules/bulma/bulma.sass";
 
 ///// custom classes /////
+
+#root, #rulesText {
+  animation: fadeIn 1s ease-in forwards;
+}
+
+.modal-background, .modal-content {
+  animation: fadeIn 600ms ease-in forwards;
+}
 
 .fullScreen {
   min-height: 100vh;
 }
 
-.showText {
-  position: relative;
-  left: -100%;
-  animation: fadeIn 0.2s forwards;
-  animation-delay: 0s;
+.iconButton:hover {
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);  
+}
 
-  @for $i from 1 through 10 {
-    &:nth-child(#{$i + 1}) {
-      animation-delay: #{$i}s;
-    }
-  }
+.is-primary, .is-success, .is-danger, .is-info {
+  transition: background-color  500ms ease-in-out;
+}
+
+.is-info > p, .tag .is-info {
+  color: #000;
+}
+
+a:hover, .button:hover {
+  transition: background-color 200ms ease-in-out;
+}
+
+.flicker {
+  animation: fadeIn 1s infinite alternate;
+}
+
+.tag {
+  min-width: 40px;
+}
+
+#rulesText {
+  height: 150px;
+}
+
+.visible {
+  display: block;
+  position: relative;
+  animation: fadeIn 1s;
+}
+
+.hidden {
+  display: none;
+  animation: fadeOut 1s;
+}
+
+.slideLeft {
+  animation: slideFromLeft 1s;
+}
+
+.slideRight {
+  animation: slideFromRight 1s;
 }
 
 @keyframes fadeIn {
-  100% {
-    left: 0;
-  }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
-.iconButton:hover {
-  cursor: pointer;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
-.is-primary, .is-success, .is-danger {
-  transition: background-color  1.5s ease-in-out; //linear
+@keyframes slideFromLeft {
+  0% { transform: translate(-110%, 0); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes slideFromRight {
+  0% { transform: translate(110%, 0); }
+  100% { transform: translate(0, 0); }
 }

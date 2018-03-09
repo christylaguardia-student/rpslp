@@ -1,37 +1,37 @@
 
 // sheldon's order
 export const rulesText = [
-  'Scissors cuts Paper',
-  'Paper covers Rock',
-  'Rock crushes Lizard',
-  'Lizard poisons Spock',
-  'Spock smashes Scissors',
-  'Scissors decapitates Lizard',
-  'Lizard eats Paper',
-  'Paper disproves Spock',
-  'Spock vaporizes Rock',
-  '(and as it always has) Rock crushes Scissors'
+  ['scissors', 'paper', 'scissors cuts paper'],
+  ['paper', 'rock', 'paper covers rock'],
+  ['rock', 'lizard', 'rock crushes lizard'],
+  ['lizard', 'spock', 'lizard poisons spock'],
+  ['spock', 'scissors', 'spock smashes scissors'],
+  ['scissors', 'lizard', 'scissors decapitates lizard'],
+  ['lizard', 'paper', 'lizard eats paper'],
+  ['paper', 'spock', 'paper disproves spock'],
+  ['spock', 'rock', 'spock vaporizes rock'],
+  ['rock', 'scissors', 'rock crushes scissors.']
 ];
 
 export const rules = {
   rock: {
-    lizard: 'Rock crushes Lizard',
-    scissors: '(as it always has) Rock crushes Scissors'
+    lizard: 'rock crushes lizard',
+    scissors: 'rock crushes scissors'
   },
   paper: {
-    rock: 'Paper covers Rock',
-    spock: 'Paper disproves Spock'
+    rock: 'paper covers rock',
+    spock: 'paper disproves spock'
   },
   scissors: {
-    lizard: 'Scissors decapitates Lizard',
-    paper: 'Scissors cuts Paper'
+    lizard: 'scissors decapitates lizard',
+    paper: 'scissors cuts paper'
   },
   lizard: {
-    spock: 'Lizard poisons Spock',
-    paper: 'Lizard eats Paper'
+    spock: 'lizard poisons spock',
+    paper: 'lizard eats paper'
   },
   spock: {
-    scissors: 'Spock smashes Scissors',
-    rock: 'Spock vaporizes Rock'
+    scissors: 'spock smashes scissors',
+    rock: 'spock vaporizes rock'
   }
 };

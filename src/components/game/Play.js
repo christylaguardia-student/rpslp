@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { rules } from './Rules';
 
 const Play = ({ handleClick }) => (
@@ -20,5 +21,9 @@ const Play = ({ handleClick }) => (
     </div>
   </div>
 );
+
+PropTypes.Play = {
+  handleClick: PropTypes.func
+}
 
 export default Play;
